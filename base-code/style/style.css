@@ -3,6 +3,7 @@
     --black: #000;
     --primary-yellow: #F5D34C;
     --secondary-yellow: #EDCC48;
+    --primary-grey: #B9B9B9;
     --primary-black:#3B3731;
     --secondary-black: #c4c4c4;
     --primary-red: #A76565;
@@ -110,7 +111,7 @@ ul {
 .btn-primary {
     color: var(--primary-black);
     background-color: var(--primary-yellow);
-    border: 1px solid: var(var(--secondary-yellow));
+    border: 1px solid var(--secondary-yellow);
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
@@ -128,6 +129,8 @@ main {
     background: var(--secondary-yellow);
     position: relative;
 }
+
+/* MAIN */
 
 .main {
     display: flex;
@@ -147,7 +150,7 @@ main {
     justify-content: center;
     min-height:80vh;
     width:100vw;
-    background: url('../images/main-left.svg');
+    background: url('../images/bg-semicircle.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -282,12 +285,78 @@ main {
     font-weight: 700;
 }
 
-.servizi {
-    min-height:100vh;
-    border: 1px solid blue;
 
+/************** SERVIZI */
+
+.servizi {
+    display: flex;
+    flex-direction: column;
 }
 
+@media (min-width: 992px) { 
+    .servizi {
+        flex-direction: row;
+        background-color: var(--primary-grey);
+    }
+}
+
+.servizi-left {
+    min-height:80vh;
+    width:100vw;
+}
+
+.servizi-right {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:100vh;
+    width:100vw;
+    background: url('../images/bg-semicircle.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/************** STUDIO */
+
+.studio {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 992px) { 
+    .studio {
+        flex-direction: row;
+        background-color: var(--secondary-yellow);
+    }
+}
+
+.studio-left {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:100vh;
+    width:100vw;
+    background: url('../images/bg-semicircle.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.studio-right {
+    min-height:80vh;
+    width:100vw;
+    background: url('../images/studio-right.png');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+
+
+/************** FOOTER */
 
 #footer {
     display: flex;
@@ -351,10 +420,12 @@ main {
 .footer-quick-access {
     display: flex;
     flex-direction: column;
+    display: none;
 }
 
 @media (min-width: 992px) { 
     .footer-quick-access {
+        display: initial;
         max-width: 90vw;
         flex-direction: row;
         justify-content: space-between;
