@@ -6,7 +6,53 @@
     --primary-grey: #B9B9B9;
     --primary-black:#3B3731;
     --secondary-black: #c4c4c4;
-    --primary-red: #A76565;
+    --primary-red: #784545;
+}
+
+/* Your local CSS File */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: 
+    local('Open Sans Extra Bold'), 
+    local('OpenSans-ExtraBold'), 
+    url(../fonts/OpenSans-ExtraBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: 
+    local('Open Sans Bold'), 
+    local('OpenSans-Bold'), 
+    url(../fonts/OpenSans-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: 
+    local('Open Sans Light'), 
+    local('OpenSans-Light'), 
+    url(../fonts/OpenSans-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: 
+    local('Open Sans Regular'), 
+    local('OpenSans-Regular'), 
+    url(../fonts/OpenSans-Regular.woff2) format('woff2'),
+    url(../fonts/OpenSans-Regular.ttf) format('truetype');
 }
 
 *,
@@ -47,7 +93,7 @@ h4,
 h5,
 h6 {
     margin-bottom: 0;
-    color: var(--primary-black);
+    color: var(--black);
 }
 
 ul {
@@ -88,8 +134,13 @@ ul {
 }
 
 .nav-link {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1rem;
+    color: var(--primary-black) !important;
+}
+
+.active > .nav-link {
+    font-weight: 700 !important;
 }
 
 @media (min-width: 992px) { 
@@ -143,7 +194,7 @@ main {
     }
 }
 
-.main-left {
+.experience {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -157,14 +208,14 @@ main {
 }
 
 @media (min-width: 992px) { 
-    .main-left {
+    .experience {
         text-align: initial;
         flex-direction: row;
         width:50vw;
     }
 }
 
-.main-left > div {
+.experience > div {
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -173,20 +224,20 @@ main {
 
 
 @media (min-width: 992px) { 
-    .main-left > div {
+    .experience > div {
         padding: 10%;
         width: 48vw;
     }
 }
 
-.main-left > div > p {
+.experience > div > p {
     font-style: normal;
     font-weight: normal;
     font-size: 1.125rem;
     text-transform: uppercase;
 }
 
-.main-left > div > h1 {
+.experience > div > h1 {
     color: var(--white);
     font-style: normal;
     font-weight: bold;
@@ -194,7 +245,7 @@ main {
     text-transform: capitalize;
 }
 
-.main-left > div > h1 > span {
+.experience > div > h1 > span {
     display: block;
     margin-top: 1rem;
     color: var(--primary-black);
@@ -202,14 +253,14 @@ main {
     
 }
 
-.main-left > div > * {
+.experience > div > * {
     margin-top: 2rem;
 }
 
 .main-right {
     min-height:80vh;
     width:100vw;
-    background: url('../images/main-right.png');
+    background: url('../images/main-right-1284w.jpg');
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -280,7 +331,7 @@ main {
     background: var(--primary-red);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50px;
-    color: var(--primary-yellow);
+    color: var(--white);
     font-style: normal;
     font-weight: 700;
 }
@@ -303,6 +354,32 @@ main {
 .servizi-left {
     min-height:80vh;
     width:100vw;
+    margin: 10px;
+}
+
+@media (min-width: 992px) { 
+    .servizileft {
+        width: 50vw;
+    }
+}
+
+.card-wrapper {
+
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    max-width: 400px;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+.card img {
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .servizi-right {
@@ -348,7 +425,7 @@ main {
 .studio-right {
     min-height:80vh;
     width:100vw;
-    background: url('../images/studio-right.png');
+    background: url('../images/studio-right.jpg');
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -425,7 +502,7 @@ main {
 
 @media (min-width: 992px) { 
     .footer-quick-access {
-        display: initial;
+        display: flex;
         max-width: 90vw;
         flex-direction: row;
         justify-content: space-between;
